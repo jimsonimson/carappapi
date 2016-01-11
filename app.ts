@@ -30,14 +30,14 @@ app.use('/api', makes);
 app.use('/api', cars);
 
 
-app.all('/*', function(req, res, next) {
-    // Just send the index.html for other files to support HTML5Mode
+app.get('/*', (req, res, next) => {
+  if(req.accepts('html'))
     res.sendFile('index.html', { root: __dirname });
+  else next({ err: 'Not Found' });
 });
-
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
   err['status'] = 404;
   next(err);
 });

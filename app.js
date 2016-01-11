@@ -18,8 +18,11 @@ app.use('/ngApp', express.static('ngApp'));
 app.use('/scripts', express.static('bower_components'));
 app.use('/api', makes);
 app.use('/api', cars);
-app.all('/*', function (req, res, next) {
-    res.sendFile('index.html', { root: __dirname });
+app.get('/*', function (req, res, next) {
+    if (req.accepts('html'))
+        res.sendFile('index.html', { root: __dirname });
+    else
+        next({ err: 'Not Found' });
 });
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
