@@ -1,0 +1,9 @@
+<h1>Search</h1>
+
+<form>
+    <input ng-model="searchText" ng-model-options="{debounce:1000}" ng-change="controller.fetch()" />
+
+    <ul>
+        <li ng-repeat="item in controller.items"></li>
+    </ul>
+</form>

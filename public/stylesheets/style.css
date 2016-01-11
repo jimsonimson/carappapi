@@ -1,0 +1,44 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.angular-google-map-container {
+    height: 400px;
+    width: 500px;
+    border: 1px solid black;
+}
+
+.movie {
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+}
+
+/* Animate before */
+
+.movie.ng-enter {
+  transition: 0.5s linear all;
+  opacity: 0;
+}
+
+/* Animate after */
+
+.movie.ng-enter-active {
+  opacity: 1;
+}
+
+/* now the element will fade out before it is removed from the DOM */
+.movie.ng-leave {
+  transition:0.5s linear all;
+  opacity:1;
+}
+.movie.ng-leave.ng-leave-active {
+  opacity:0;
+}

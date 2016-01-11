@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyApp">
+<head>
+    <title>SPA</title>
+    <base href="/" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <script src="/scripts/lodash/lodash.min.js"></script>
+    <script src="/scripts/jquery/dist/jquery.min.js"></script>
+    <script src="/scripts/angular/angular.min.js"></script>
+</head>
+<body>
+
+    <md-toolbar class="md-whiteframe-4dp" layout>
+        <span flex='5'></span>
+        <h3>Car Dealership</h3>
+        <span flex></span>
+        <div layout layout-align="center center" ng-cloak>
+            <a href="/">Home</a> /
+            <a href="/about">About</a> /
+            <a href="/search">Search</a> /
+            <a href="/list">List</a> /
+            <a href="/login" ng-show="!account.isLoggedIn()">login</a>
+            <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">logout</a>
+        </div>
+        <span flex="5"></span>
+    </md-toolbar>
+
+    <ng-view layout="column" layout-fill></ng-view>
+
+
+    <ng-view></ng-view>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+    <script src="/scripts/angular-route/angular-route.min.js"></script>
+    <script src="/scripts/angular-resource/angular-resource.min.js"></script>
+
+    <script src="/ngApp/app.js"></script>
+    <script src="/ngApp/controllers/controllers.js"></script>
+    <script src="/ngApp/services/services.js"></script>
+
+    <script src="/ngApp/controllers/accountController.js"></script>
+    <script src="/ngApp/services/accountService.js"></script>
+
+    <script src="/ngApp/controllers/carSearchController.js"></script>
+    <script src="/ngApp/services/carsService.js"></script>
+
+
+</body>
+</html>
